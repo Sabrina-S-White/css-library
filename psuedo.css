@@ -1,0 +1,32 @@
+/*this file is a reference page of possible pseudo selectors for css*/
+
+/*pseudo-classes are called with one colon, pseudo-elements are called with two colons*/
+
+p:first-child {} /*this selects the first element that fits the selector (p in this example). this means that you could ensure the first paragraph of a block of several paragraphs could be bold, etc.*/
+
+/*there are also :last-child, :only-child, and :invalid pseudo-classess*/
+
+/*user action pseudo-classes*/
+:hover /*this applies when the mouse is hovering over something*/
+
+:focus /*this applies if the user focuses the element by clicking or using a keystroke*/
+
+/*pseudo-classes*/
+/*pseudo-classes are temporary elements that are generated in the css*/
+
+article p::first-line {font-weight: bold;}
+
+    /*this changes the first line of a p element to bold. this would change the first line of each paragraph, which is not always wanted. we can also do a pseudo-element and a pseudo-class together*/
+
+    article p:first-child::first-line {
+        font-weight: bold;
+    }
+
+    /*this makes the first line of the first paragraph in the article element bold*/
+
+    /*adding content to an element with pseudo-classes*/
+
+    .box::before {content: 'xyz'} /*this adds text to an element. ::before adds the text before existing text, and ::after adds it after!*/
+
+
+

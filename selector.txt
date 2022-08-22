@@ -1,0 +1,27 @@
+This file is to store different methods of selecting elements with css. It is not for use in development, but is a reference page.
+
+Example html: 
+<main class="parent">
+  <div class="child group1">
+    <div class="grand-child group1"></div>
+  </div>
+  <div class="child group2">
+    <div class="grand-child group2"></div>
+  </div>
+  <div class="child group3">
+    <div class="grand-child group3"></div>
+  </div>
+</main>
+
+main div {} - this will select all divs under main 
+
+main > div{} - this will only select the divs under main 
+
+main > div > div {} - this iwll only select the 'grand-child' divs 
+
+.group1 + div {} - this will only select .group1 and .group2 
+
+.group1 + div + div {} - this will select .group1, .group2. and .group3
+
+
+.group1 ~ div {} - this will select all sibling divs of .group1 (.group2 and .group3)
