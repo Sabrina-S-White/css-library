@@ -1,3 +1,5 @@
+:root {} /*this selects the root of the webpage. this is the highest parent, and is a good way to add in global css*/
+
 /*this file is a reference page of possible pseudo selectors for css*/
 
 /*pseudo-classes are called with one colon, pseudo-elements are called with two colons*/
@@ -6,10 +8,15 @@ p:first-child {} /*this selects the first element that fits the selector (p in t
 
 /*there are also :last-child, :only-child, and :invalid pseudo-classess*/
 
+p:nth-child(odd/even/math) /*this selects alternating childs*/
+p:empty{} /*this selects all empty p elements on a page*/
+
 /*user action pseudo-classes*/
 :hover /*this applies when the mouse is hovering over something*/
 
 :focus /*this applies if the user focuses the element by clicking or using a keystroke*/
+
+:active /*applies to elements that are currently being clicked, and is especially useful for giving your user feedback that their action had an effect. This is a great one to give your buttons and other interactive elements more ‘tactile’ feedback.*/
 
 /*pseudo-classes*/
 /*pseudo-classes are temporary elements that are generated in the css*/
@@ -26,7 +33,11 @@ article p::first-line {font-weight: bold;}
 
     /*adding content to an element with pseudo-classes*/
 
-    .box::before {content: 'xyz'} /*this adds text to an element. ::before adds the text before existing text, and ::after adds it after!*/
+    .box::before {content: 'xyz'} /*this adds text to an element. ::before adds the text before existing text, and ::after adds it after! you don't really want to add text this way, as screen readers can't read it; however, you can use this to add icons like copyright symbols etc. as you don't need screen readers to read those*/
+
+    /*this site has the css to generate a box with an arrow on one side. for callouts etc. https://cssarrowplease.com/*/
+
+a {text-decoration: underline;} a:link {color:blue;} a:after{color: purple;} /*this is how default link styling is done on webpages*/
 
 
 
