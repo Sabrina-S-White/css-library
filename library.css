@@ -10,3 +10,28 @@
     body {
     font-family: 'Roboto', sans-serif;
 }
+
+/*box shadows*/
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    .box-shadow {box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);}
+    /* inset | offset-x | offset-y | color */
+    .box-shadow {box-shadow: inset 5em 1em gold;}
+
+/*border radius*/
+    /* top-left | top-right | bottom-right | bottom-left */
+    .border-radius {border-radius: 1px 0 3px 4px;}
+    /* (first radius values) / top-left | top-right | bottom-right | bottom-left 
+    This one makes an eliptical shape due to the two sets of radius values*/
+    .border-radius-elipses {border-radius: 10px 5% / 20px 25em 30px 35em;}  
+
+/*overflow options 
+overflow: visible;
+overflow: hidden;
+overflow: clip;
+overflow: scroll;
+overflow: auto;
+overflow: hidden visible;*/
+/*this provides a scrollbar that isn't it's own element. it's just laid over the container*/
+* {
+    overflow: overlay;
+}
