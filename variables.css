@@ -21,3 +21,21 @@ main {
     background-color: var(--background-color-main, white);
     border: var(--main-border, var(--border, green));
 }
+
+:root {
+    --border-btn: 1px solid rgb(36, 36, 36);
+    --color-base-bg: rgb(240, 240, 240);
+    --color-base-text: rgb(18, 18, 18);
+    --color-btn-bg: rgb(220, 220, 220);
+    --theme-name: "light";}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --border-btn: 1px solid rgb(220, 220, 220);
+        --color-base-bg: rgb(18, 18, 18);
+        --color-base-text: rgb(240, 240, 240);
+        --color-btn-bg: rgb(36, 36, 36);
+        --theme-name: "dark";
+      }
+    /* This checks if the system/browser is using a dark theme. If so, it will default to that. Otherwise it will use the above light theme. */
+}
