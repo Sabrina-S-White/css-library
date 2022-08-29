@@ -1,2 +1,23 @@
 /* Variables and Properties in css */
 /* You want to use variables because then you can set something, like a color pallete, once. When it's set you can then reference it multiple times in your document, tweaking the initial declaration if you want to tweak a color instead of every instance of that declaration. */
+/* Variables are not universal if you don't put them in :root. This means that you can declare variables in a div that will only be usable by child elements. */
+
+:root {
+    /* Use this space to declare variables. */
+    --background-color-main: aliceblue;
+    --main-border: 2px solid black;
+    --border: 2px solid blue;
+}
+
+main {
+    background-color: var(--background-color-main);
+    border: var(--main-border);
+    /* You can later call variables using the var() function. */
+}
+
+/* var() takes two inputs, the main declaration and a fallback value. This can be its own variable with its own fallback value */
+
+main {
+    background-color: var(--background-color-main, white);
+    border: var(--main-border, var(--border, green));
+}
