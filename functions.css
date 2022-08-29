@@ -1,0 +1,81 @@
+/* This document has information about css functions. */
+* {
+    color: (250, 100, 200); /* The color function takes three numbers as rgb values. */
+
+    background: linear-gradient(90deg, blue, red); /* linear-gradient() takes two - three inputs. the colors are what colors it's transitioning between, and the angle specifies which direction the transition is occurring. */
+}
+
+/* calc() */
+:root {
+    --header: 3rem;
+    --footer: 40px;
+    --main: calc(100vh - calc(var(--header) + var(--footer)));
+    /* This establishes the height of the header and footer variables, and establishes the main height using calc(). */
+}
+
+#container {
+    height: 100vh;
+    /* This sets the overall page height so we can calculate divs inside of it. */
+}
+
+#header {
+    height: var(--header);
+    /* This sets the height to the variable defined above. */
+}
+
+#footer {
+    height: var(--footer);
+}
+
+#main {
+    height: var(--main);
+}
+
+/* Padding management with calc() */
+/* You can make padding dynamically scale with this trick */
+#footer {
+    --contentWidth: 400px;
+    background: lightcoral;
+    padding:    2rem max(2rem, 50vw - var(--contentWidth) / 2);
+}
+
+/* SCALING - you want a line of text to have between 45 and 75 characters. Scale to make this happen! */
+
+/* min() */
+/* This function takes two values, the max size something can be and the amount of the parent it will take up if the max size cannot be used. */
+
+#container {
+    width: 300px;
+    height: 300px;
+    /* This is a container that exists on a page. */
+}
+
+#div1 {
+    width: min(150px, 100%);
+    /* This means that the div inside of #container will take up 150px for it's width. If the container is scaled below 150px width, it will take up 100% of the container's width.  */
+    /* You can do math in the second value, such as (100vh - 2rem) to calculate scaling. */
+}
+
+/* max() */
+/* This sets the minimum size that an element can be. It defaults to the largest one, and has a cap of how small something can be. */
+
+#div2 {
+    width: max(100px, 4rem, 50%);
+    /* This will select whichever of these is largest. If 50% of the parent is the largest, it will scale to fit that. If 4rem is, it will use that. It will do this dynamically as the page scales. In this example, width will never go below 100px, as if the other values are smaller than that 100px will be used. */
+
+    /* This is used to support accesibility. It ensures that important functionality doesn't become unusably small when scalling the page down/other elements up (such as font). */
+}
+
+/* clamp() */
+/* clamp takes three values, the smallest value, the ideal value, and the largest value.  */
+
+p {
+    font-size: clamp(320px, 80vw, 60rem);
+    /* Fluid Typography - this means that the font size of the paragraph would ideally be 80vw (80% of the viewport width), it can scale up to 60rem, and it can shrink down to 320px. */
+    width: clamp(45ch, 50%, 75ch);
+    /* This will scale a container to be, at minimum, the width of 45 characters. At max it would be the width of 75 characters (plus all other styling, margin, padding, etc.). If we're somewhere between those two, it will take up 50% of it's parent's width. */
+    width: min(75ch, 50%);
+    /* This sets a defacto max size of 75 characters. If larger than that width, it will take up 50% of the parent container. */
+    width: max(45ch, 50%);
+    /* This sets a min size of 45 characters. If it's larger than that, it will take 50% of the parent container width. */
+}

@@ -1,9 +1,10 @@
 /* This document shows ways to position elements on a webpage. */
 /* Static and relative positioning. */
+/* Any time you have a position other than static in a parent container, all children will be positioned in relation to that parent rather than to the page. */
 
 div {
     position: static; /* Is the default positioning style. Top, left, etc. do not work. */
-    position: relative; /* Allows you to use top, left, right, bottom to position an element. */
+    position: relative; /* Allows you to use top, left, right, bottom to position an element. This isn't used too much since it removes the element from the document flow. This is mainly used as a specification on a div or parent when you want something positioned absolutely within it. Position relative with a child that is position absolute positions the child absolutely within the parent rather than within the page. */
     position: absolute; /* Allows you to position something and take it out of the flow of the document. Icons on top of buttons, etc. */ 
     position: fixed; /* Fixes an element relative to the viewport. Use T, L, R, & B to move element to where you want, it will stay there as you scroll. */
     position: sticky; /* Positions an element on the page. When you scroll past it it becomes fixed to the top of the page. */

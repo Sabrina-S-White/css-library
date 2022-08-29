@@ -1,0 +1,2 @@
+/* Variables and Properties in css */
+/* You want to use variables because then you can set something, like a color pallete, once. When it's set you can then reference it multiple times in your document, tweaking the initial declaration if you want to tweak a color instead of every instance of that declaration. */
